@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuralShop · AI‑driven e‑commerce</title>
+  <!-- Font & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background: #f8fafc;
+      color: #0b1a2f;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== HEADER / NAV ===== */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #0b1a2f;
+    }
+
+    .logo i {
+      background: #2a4bff;
+      color: white;
+      padding: 10px 12px;
+      border-radius: 40px;
+      font-size: 1.4rem;
+      box-shadow: 0 8px 20px rgba(42, 75, 255, 0.25);
+    }
+
+    .logo span {
+      background: linear-gradient(145deg, #1f2b6b, #2a4bff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-weight: 500;
+      color: #1e2b4f;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1e2b4f;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #2a4bff;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 18px;
+      font-size: 1.3rem;
+      color: #1e2b4f;
+    }
+
+    .nav-icons i {
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .nav-icons i:hover {
+      color: #2a4bff;
+      transform: translateY(-2px);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 48px 0 40px;
+      gap: 30px;
+    }
+
+    .hero-text {
+      flex: 1 1 400px;
+    }
+
+    .hero-text .badge {
+      background: #eef3ff;
+      color: #2a4bff;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 16px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-text h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .hero-text h1 i {
+      color: #2a4bff;
+      background: #eef3ff;
+      padding: 0 8px;
+      border-radius: 20px;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #2f405c;
+      max-width: 480px;
+      margin-bottom: 30px;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary {
+      background: #2a4bff;
+      border: none;
+      color: white;
+      padding: 14px 38px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 8px 20px rgba(42, 75, 255, 0.25);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary:hover {
+      background: #1a3ae0;
+      transform: scale(1.02);
+      box-shadow: 0 12px 28px rgba(42, 75, 255, 0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #d0d9e8;
+      color: #1e2b4f;
+      padding: 14px 34px;
+      border-radius: 60px;
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-outline:hover {
+      border-color: #2a4bff;
+      color: #2a4bff;
+      background: #f5f8ff;
+    }
+
+    .hero-image {
+      flex: 1 1 400px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      width: 480px;
+      height: auto;
+      border-radius: 32px;
+      box-shadow: 0 20px 40px -12px rgba(0,0,0,0.15);
+      object-fit: cover;
+      transition: 0.3s ease;
+    }
+
+    .hero-image img:hover {
+      transform: scale(1.01);
+    }
+
+    /* ===== FEATURES ===== */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 40px 0 20px;
+      border-top: 1px solid rgba(0,0,0,0.04);
+      margin-top: 20px;
+    }
+
+    .feature-item {
+      flex: 1 1 180px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .feature-item i {
+      font-size: 2rem;
+      color: #2a4bff;
+      background: #eef3ff;
+      padding: 12px;
+      border-radius: 60px;
+    }
+
+    .feature-item h4 {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .feature-item p {
+      color: #4f5f7a;
+      font-size: 0.9rem;
+    }
+
+    /* ===== PRODUCT GRID ===== */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 48px 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title i {
+      color: #2a4bff;
+      font-size: 1.8rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+      margin: 30px 0 50px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 28px;
+      padding: 20px 16px 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+      transition: 0.25s ease;
+      border: 1px solid #f0f4fe;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px -12px rgba(42, 75, 255, 0.12);
+      border-color: #d6e2ff;
+    }
+
+    .product-card img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 20px;
+      background: #f2f6fc;
+      margin-bottom: 14px;
+      transition: 0.2s;
+    }
+
+    .product-card img:hover {
+      filter: brightness(0.97);
+    }
+
+    .product-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .product-card .category {
+      color: #6e7e9b;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .product-card .price {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #0b1a2f;
+      margin-top: 6px;
+    }
+
+    .product-card .price small {
+      font-weight: 400;
+      font-size: 0.9rem;
+      color: #6e7e9b;
+      margin-left: 6px;
+      text-decoration: line-through;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+    }
+
+    .product-footer i {
+      background: #f0f5ff;
+      padding: 10px 12px;
+      border-radius: 60px;
+      color: #2a4bff;
+      font-size: 1.1rem;
+      transition: 0.2s;
+      cursor: default;
+    }
+
+    .product-footer i:hover {
+      background: #2a4bff;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .rating {
+      color: #f7b731;
+      letter-spacing: 2px;
+      font-size: 0.9rem;
+    }
+
+    /* ===== BANNER / NEWSLETTER ===== */
+    .newsletter {
+      background: #0b1a2f;
+      border-radius: 40px;
+      padding: 48px 40px;
+      margin: 40px 0 30px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+
+    .newsletter h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    .newsletter p {
+      opacity: 0.7;
+      max-width: 400px;
+    }
+
+    .newsletter-input {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .newsletter-input input {
+      padding: 14px 24px;
+      border-radius: 60px;
+      border: none;
+      min-width: 220px;
+      background: #1f2f48;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .newsletter-input input::placeholder {
+      color: #9aabbf;
+    }
+
+    .newsletter-input button {
+      background: #2a4bff;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .newsletter-input button:hover {
+      background: #4160ff;
+      transform: scale(1.02);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      border-top: 1px solid #e2e8f0;
+      padding: 32px 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      color: #2f405c;
+      margin-top: 20px;
+    }
+
+    .footer .social i {
+      font-size: 1.4rem;
+      margin-left: 16px;
+      color: #4f5f7a;
+      transition: 0.2s;
+    }
+
+    .footer .social i:hover {
+      color: #2a4bff;
+      transform: translateY(-3px);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 700px) {
+      .hero-text h1 {
+        font-size: 2.6rem;
+      }
+      .navbar {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .nav-links {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .newsletter {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+      .feature-item {
+        flex: 1 1 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-text h1 {
+        font-size: 2.1rem;
+      }
+      .btn-primary, .btn-outline {
+        width: 100%;
+        justify-content: center;
+      }
+      .product-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTV0NLN2X5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-NTV0NLN2X5');
+</script>
+
+
+</head>
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="navbar">
+      <div class="logo">
+        <i class="fas fa-brain"></i>
+        <span>Neural</span>Shop
+      </div>
+      <div class="nav-links">
+       <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      </div>
+      <div class="nav-icons">
+        <i class="fas fa-search"></i>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-shopping-bag"></i>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <span class="badge"><i class="fas fa-microchip"></i> AI‑powered discovery</span>
+        <h1>Smart shopping <br>starts with <i>Neural</i></h1>
+        <p>NeuralShop curates products that match your style, vibe, and values — all powered by next‑gen intelligence.</p>
+        <div class="cta-group">
+          <button class="btn-primary"><i class="fas fa-robot"></i> Shop Neural</button>
+          <button class="btn-outline"><i class="fas fa-play-circle"></i> See how it works</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- working image from picsum (random tech/lifestyle) -->
+        <img src="https://picsum.photos/seed/neural/600/500" alt="NeuralShop AI experience" loading="lazy">
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <div class="features">
+      <div class="feature-item">
+        <i class="fas fa-bolt"></i>
+        <div><h4>Lightning AI</h4><p>real‑time recommendations</p></div>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-shield-alt"></i>
+        <div><h4>Neural Trust</h4><p>verified &amp; vetted</p></div>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-gift"></i>
+        <div><h4>Smart Deals</h4><p>AI‑optimized prices</p></div>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-leaf"></i>
+        <div><h4>Eco‑neural</h4><p>sustainable choices</p></div>
+      </div>
+    </div>
+
+    <!-- PRODUCT GRID (all images working) -->
+    <div class="section-title">
+      <i class="fas fa-sparkles"></i> Neural Picks <span style="font-size:1rem; font-weight:400; margin-left: 8px; color: #2f405c;">— curated for you</span>
+    </div>
+
+    <div class="product-grid">
+      <!-- product 1 -->
+      <div class="product-card">
+        <img src="https://picsum.photos/seed/tech1/400/400" alt="Wireless earbuds" loading="lazy">
+        <h3>NeuralBuds X</h3>
+        <div class="category">Audio · AI‑tuned</div>
+        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.8</div>
+        <div class="price">$79.99 <small>$129.99</small></div>
+        <div class="product-footer">
+          <span><i class="fas fa-circle" style="color:#2a4bff; font-size: 0.7rem; margin-right: 6px;"></i> in stock</span>
+          <i class="fas fa-plus-circle"></i>
+        </div>
+      </div>
+      <!-- product 2 -->
+      <div class="product-card">
+        <img src="https://picsum.photos/seed/fashion2/400/400" alt="Smart jacket" loading="lazy">
+        <h3>NeuralWear Coat</h3>
+        <div class="category">Apparel · climate‑smart</div>
+        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div>
+        <div class="price">$189.00 <small>$249.00</small></div>
+        <div class="product-footer">
+          <span><i class="fas fa-circle" style="color:#2a4bff; font-size: 0.7rem; margin-right: 6px;"></i> in stock</span>
+          <i class="fas fa-plus-circle"></i>
+        </div>
+      </div>
+      <!-- product 3 -->
+      <div class="product-card">
+        <img src="https://picsum.photos/seed/desk3/400/400" alt="Ergonomic chair" loading="lazy">
+        <h3>NeuralErgo Pro</h3>
+        <div class="category">Furniture · posture AI</div>
+        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.9</div>
+        <div class="price">$349.00 <small>$499.00</small></div>
+        <div class="product-footer">
+          <span><i class="fas fa-circle" style="color:#2a4bff; font-size: 0.7rem; margin-right: 6px;"></i> in stock</span>
+          <i class="fas fa-plus-circle"></i>
+        </div>
+      </div>
+      <!-- product 4 -->
+      <div class="product-card">
+        <img src="https://picsum.photos/seed/kitchen4/400/400" alt="AI coffee machine" loading="lazy">
+        <h3>NeuralBrew</h3>
+        <div class="category">Kitchen · smart brew</div>
+        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.7</div>
+        <div class="price">$129.00 <small>$179.00</small></div>
+        <div class="product-footer">
+          <span><i class="fas fa-circle" style="color:#2a4bff; font-size: 0.7rem; margin-right: 6px;"></i> in stock</span>
+          <i class="fas fa-plus-circle"></i>
+        </div>
+      </div>
+      <!-- product 5 -->
+      <div class="product-card">
+        <img src="https://picsum.photos/seed/skincare5/400/400" alt="NeuralGlow serum" loading="lazy">
+        <h3>NeuralGlow Serum</h3>
+        <div class="category">Beauty · AI‑formula</div>
+        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.9</div>
+        <div class="price">$44.50 <small>$69.00</small></div>
+        <div class="product-footer">
+          <span><i class="fas fa-circle" style="color:#2a4bff; font-size: 0.7rem; margin-right: 6px;"></i> in stock</span>
+          <i class="fas fa-plus-circle"></i>
+        </div>
+      </div>
+      <!-- product 6 -->
+      <div class="product-card">
+        <img src="https://picsum.photos/seed/fitness6/400/400" alt="NeuralBand fitness" loading="lazy">
+        <h3>NeuralBand 2</h3>
+        <div class="category">Wearable · health AI</div>
+        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.8</div>
+        <div class="price">$99.00 <small>$149.00</small></div>
+        <div class="product-footer">
+          <span><i class="fas fa-circle" style="color:#2a4bff; font-size: 0.7rem; margin-right: 6px;"></i> in stock</span>
+          <i class="fas fa-plus-circle"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEWSLETTER BANNER -->
+    <div class="newsletter">
+      <div>
+        <h2><i class="fas fa-bell" style="margin-right: 14px;"></i> NeuralInsider</h2>
+        <p>Get AI‑curated drops, early access, and exclusive neural deals.</p>
+      </div>
+      <div class="newsletter-input">
+        <input type="email" placeholder="Enter your email">
+        <button><i class="fas fa-arrow-right"></i> Subscribe</button>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div>
+        <strong>NeuralShop</strong> &copy; 2026 — built with <i class="fas fa-heart" style="color:#2a4bff;"></i> &amp; neural nets.
+      </div>
+      <div class="social">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+        <i class="fab fa-github"></i>
+      </div>
+    </footer>
+
+  </div> <!-- container -->
+</body>
+</html>

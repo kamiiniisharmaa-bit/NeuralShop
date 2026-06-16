@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuralShop · Terms of Service</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background: #f8fafc;
+      color: #0b1a2f;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== HEADER / NAV (mirror homepage) ===== */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #0b1a2f;
+      text-decoration: none;
+    }
+
+    .logo i {
+      background: #2a4bff;
+      color: white;
+      padding: 10px 12px;
+      border-radius: 40px;
+      font-size: 1.4rem;
+      box-shadow: 0 8px 20px rgba(42, 75, 255, 0.25);
+    }
+
+    .logo span {
+      background: linear-gradient(145deg, #1f2b6b, #2a4bff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-weight: 500;
+      color: #1e2b4f;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1e2b4f;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #2a4bff;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 18px;
+      font-size: 1.3rem;
+      color: #1e2b4f;
+    }
+
+    .nav-icons i {
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .nav-icons i:hover {
+      color: #2a4bff;
+      transform: translateY(-2px);
+    }
+
+    /* ===== TERMS HERO ===== */
+    .terms-hero {
+      padding: 40px 0 20px;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      margin-bottom: 30px;
+    }
+
+    .terms-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .terms-hero h1 i {
+      color: #2a4bff;
+      background: #eef3ff;
+      padding: 12px 16px;
+      border-radius: 60px;
+      font-size: 2rem;
+    }
+
+    .terms-hero p {
+      font-size: 1.2rem;
+      color: #2f405c;
+      max-width: 700px;
+      margin-top: 8px;
+    }
+
+    .last-updated {
+      background: #eef3ff;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #1f3b7a;
+      display: inline-block;
+      margin-top: 12px;
+    }
+
+    /* ===== TERMS CONTENT ===== */
+    .terms-content {
+      background: white;
+      border-radius: 32px;
+      padding: 40px 48px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.02);
+      border: 1px solid #f0f4fe;
+      margin: 20px 0 50px;
+    }
+
+    .terms-content h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: #0b1a2f;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .terms-content h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .terms-content h2 i {
+      color: #2a4bff;
+      font-size: 1.5rem;
+      width: 36px;
+    }
+
+    .terms-content p {
+      color: #1e2b4f;
+      margin-bottom: 16px;
+      padding-left: 8px;
+    }
+
+    .terms-content ul {
+      margin: 12px 0 24px 32px;
+      color: #1e2b4f;
+    }
+
+    .terms-content ul li {
+      margin-bottom: 8px;
+      list-style-type: '▹ ';
+      padding-left: 8px;
+    }
+
+    .terms-content ul li::marker {
+      color: #2a4bff;
+      font-size: 1.2rem;
+    }
+
+    .terms-content .highlight-box {
+      background: #f5f9ff;
+      border-left: 4px solid #2a4bff;
+      padding: 18px 24px;
+      border-radius: 16px;
+      margin: 24px 0;
+    }
+
+    .terms-content .highlight-box i {
+      color: #2a4bff;
+      margin-right: 10px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e5edf8;
+      margin: 32px 0;
+    }
+
+    /* ===== BACK TO HOME ===== */
+    .back-home {
+      margin: 10px 0 40px;
+    }
+
+    .back-home a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      padding: 12px 28px;
+      border-radius: 60px;
+      text-decoration: none;
+      color: #0b1a2f;
+      font-weight: 500;
+      border: 1px solid #dce4f0;
+      transition: 0.2s;
+    }
+
+    .back-home a:hover {
+      border-color: #2a4bff;
+      color: #2a4bff;
+      box-shadow: 0 6px 16px rgba(42, 75, 255, 0.08);
+    }
+
+    /* ===== FOOTER (mirror) ===== */
+    .footer {
+      border-top: 1px solid #e2e8f0;
+      padding: 32px 0 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      color: #2f405c;
+      margin-top: 10px;
+    }
+
+    .footer .social i {
+      font-size: 1.4rem;
+      margin-left: 16px;
+      color: #4f5f7a;
+      transition: 0.2s;
+    }
+
+    .footer .social i:hover {
+      color: #2a4bff;
+      transform: translateY(-3px);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .nav-links {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .terms-hero h1 {
+        font-size: 2.2rem;
+        flex-wrap: wrap;
+      }
+      .terms-content {
+        padding: 24px 20px;
+      }
+      .terms-content h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .terms-hero h1 {
+        font-size: 1.9rem;
+      }
+      .terms-content {
+        padding: 20px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- HEADER (exactly as homepage) -->
+    <header class="navbar">
+      <a href="#" class="logo">
+        <i class="fas fa-brain"></i>
+        <span>Neural</span>Shop
+      </a>
+      <div class="nav-links">
+       <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      </div>
+      <div class="nav-icons">
+        <i class="fas fa-search"></i>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-shopping-bag"></i>
+      </div>
+    </header>
+
+    <!-- TERMS HERO -->
+    <div class="terms-hero">
+      <h1>
+        <i class="fas fa-file-contract"></i> 
+        Terms of Service
+      </h1>
+      <p>Welcome to NeuralShop. These terms govern your use of our AI‑powered platform.</p>
+      <span class="last-updated"><i class="far fa-calendar-alt"></i> Last updated: June 17, 2026</span>
+    </div>
+
+    <!-- MAIN TERMS CONTENT -->
+    <div class="terms-content">
+
+      <h2><i class="fas fa-check-circle"></i> 1. Acceptance of Terms</h2>
+      <p>By accessing or using NeuralShop (the “Platform”), you agree to be bound by these Terms of Service, our Privacy Policy, and all applicable laws. If you do not agree, please do not use the Platform.</p>
+
+      <h2><i class="fas fa-robot"></i> 2. AI‑Powered Services</h2>
+      <p>NeuralShop uses machine learning algorithms to curate product recommendations, personalize deals, and optimise your shopping experience. You acknowledge that:</p>
+      <ul>
+        <li>Recommendations are generated based on user behaviour and product data.</li>
+        <li>AI outputs are for informational purposes and do not constitute professional advice.</li>
+        <li>We continuously improve our models, but accuracy is not guaranteed.</li>
+      </ul>
+
+      <div class="highlight-box">
+        <i class="fas fa-lightbulb"></i> <strong>Neural Insight:</strong> Our AI learns from millions of data points to bring you the most relevant products. You can always adjust your preferences in your account settings.
+      </div>
+
+      <h2><i class="fas fa-user-shield"></i> 3. User Accounts &amp; Security</h2>
+      <p>To access certain features, you may need to create an account. You are responsible for:</p>
+      <ul>
+        <li>Maintaining the confidentiality of your login credentials.</li>
+        <li>All activities that occur under your account.</li>
+        <li>Notifying us immediately of any unauthorised use.</li>
+      </ul>
+
+      <h2><i class="fas fa-shopping-cart"></i> 4. Purchases &amp; Transactions</h2>
+      <p>All purchases made through NeuralShop are subject to our seller policies. By placing an order, you agree to pay the listed price and any applicable taxes. We reserve the right to cancel orders due to pricing errors or stock unavailability.</p>
+
+      <h2><i class="fas fa-ban"></i> 5. Prohibited Activities</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Use the Platform for any unlawful purpose.</li>
+        <li>Interfere with or disrupt the AI systems or servers.</li>
+        <li>Scrape, crawl, or extract data without our prior written consent.</li>
+        <li>Impersonate any person or entity.</li>
+      </ul>
+
+      <hr>
+
+      <h2><i class="fas fa-copyright"></i> 6. Intellectual Property</h2>
+      <p>All content on NeuralShop, including logos, text, graphics, AI models, and software, is the property of NeuralShop or its licensors and is protected by copyright, trademark, and other laws.</p>
+
+      <h2><i class="fas fa-gavel"></i> 7. Disclaimer of Warranties</h2>
+      <p>The Platform and all AI‑generated content are provided “as is” without warranties of any kind. We do not guarantee that the Platform will be error‑free, secure, or uninterrupted.</p>
+
+      <h2><i class="fas fa-balance-scale"></i> 8. Limitation of Liability</h2>
+      <p>To the fullest extent permitted by law, NeuralShop shall not be liable for any indirect, incidental, or consequential damages arising from your use of the Platform, even if advised of the possibility of such damages.</p>
+
+      <div class="highlight-box">
+        <i class="fas fa-gavel"></i> <strong>Governing Law:</strong> These terms are governed by the laws of the State of California, without regard to its conflict of law principles.
+      </div>
+
+      <h2><i class="fas fa-edit"></i> 9. Changes to Terms</h2>
+      <p>We may update these Terms from time to time. We will notify you of significant changes via email or a prominent notice on the Platform. Your continued use after changes constitutes acceptance.</p>
+
+      <h2><i class="fas fa-envelope"></i> 10. Contact</h2>
+      <p>If you have any questions about these Terms, please reach out to us at <strong>legal@neuralshop.ai</strong> or through our support channel.</p>
+
+    </div> <!-- end terms-content -->
+
+    <!-- BACK TO HOME -->
+    <div class="back-home">
+      <a href="#"><i class="fas fa-arrow-left"></i> Back to NeuralShop</a>
+    </div>
+
+    <!-- FOOTER (mirror homepage) -->
+    <footer class="footer">
+      <div>
+        <strong>NeuralShop</strong> &copy; 2026 — built with <i class="fas fa-heart" style="color:#2a4bff;"></i> &amp; neural nets.
+      </div>
+      <div class="social">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+        <i class="fab fa-github"></i>
+      </div>
+    </footer>
+
+  </div> <!-- container -->
+</body>
+</html>
